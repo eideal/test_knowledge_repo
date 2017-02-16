@@ -24,7 +24,7 @@ Inform recruiting strategy for SWE experienced candidates. Clients are Lori, EQ,
 
 ### Descriptives
 
-```{r, echo=FALSE, warnings=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 library(ggplot2)
 library(plyr)
 ```

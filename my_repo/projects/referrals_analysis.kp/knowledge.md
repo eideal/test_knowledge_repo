@@ -8,7 +8,7 @@ tags:
 - recruiting
 - referrals
 created_at: 2017-02-15 00:00:00
-updated_at: 2017-02-15 21:56:58.634064
+updated_at: 2017-02-15 22:00:05.481842
 tldr: Investigating performance, application creation to offer extend times, and funnel
   success rates for SWE experienced referrals and non-referrals.
 thumbnail: images/unnamed-chunk-2-1.png
@@ -26,9 +26,6 @@ Inform recruiting strategy for SWE experienced candidates. Clients are Lori, EQ,
 ### Descriptives
 
 
-```
-## Warning: package 'ggplot2' was built under R version 3.3.2
-```
 
 This plot shows the number of unique lead candidates, referrals, and solicits in 2015, 2016, and YTD.
 
