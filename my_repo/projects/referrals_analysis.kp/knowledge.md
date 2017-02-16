@@ -1,5 +1,5 @@
 ---
-title: This is a Knowledge Template Header
+title: Referrals Analysis
 authors:
 - Emma Ideal
 - Pat Caputo
@@ -8,7 +8,7 @@ tags:
 - recruiting
 - referrals
 created_at: 2017-02-15 00:00:00
-updated_at: 2017-02-15 21:34:38.610237
+updated_at: 2017-02-15 21:38:16.544017
 tldr: Investigating performance, application creation to offer extend times, and funnel
   success rates for SWE experienced referrals and non-referrals.
 thumbnail: images/unnamed-chunk-2-1.png
