@@ -16,7 +16,6 @@ tldr: Investigating performance, application creation to offer extend times, and
 
 [TOC]
 
-_NOTE: this will include a table of contents when rendered on the site._
 
 
 ### Goals
