@@ -1,0 +1,75 @@
+---
+title: This is a Knowledge Template Header
+authors:
+- Emma Ideal
+- Pat Caputo
+- Josh Sacco
+tags:
+- recruiting
+- referrals
+created_at: 2017-02-15
+updated_at: 2017-02-15
+tldr: Investigating performance, application creation to offer extend times, and funnel success rates for SWE experienced referrals and non-referrals.
+---
+
+**Contents**
+
+[TOC]
+
+_NOTE: this will include a table of contents when rendered on the site._
+
+
+### Goals
+
+Inform recruiting strategy for SWE experienced candidates
+
+### This Section Says Exactly This Takeaway
+
+Here is some example code.
+
+```{r, echo=FALSE, warnings=FALSE}
+library(ggplot2)
+library(plyr)
+```
+
+This plot shows the number of unique lead candidates, referrals, and solicits in 2015, 2016, and YTD.
+
+```{r, echo=FALSE}
+# Read in the Hive data
+r <- read.csv('/Users/eaideal/Desktop/Analysis/Referrals Analysis/SWE_Experienced/rec_hive2.csv', colClasses='character')[,c(1:4,7,10:11,20,25)]
+names(r) <- c('ref_emp_id','fbid', 'candid', 'refid', 'pos', 'ques', 'reftype', 'dept', 'date_created')
+
+# Clean date
+r$date_created <- as.Date(format(as.Date(r$date_created, format="%Y-%m-%d"), "%Y-%m-%d"))
+r$ref_yr <- as.character(format(r$date_created,'%Y'))
+
+# Determine if the referral question contains the phrase "can vouch" or "worked vouch"
+match <- c('can_vouch', 'worked_vouch')
+r$vouch <- grepl(paste(match, collapse="|"), r$ques)
+
+# Unique candidates referred by year and by type (for referrals within the Software Engineering departments)
+d <- ddply(r[r$ref_yr %in% c(2015,2016,2017) & grepl('Software Engineering', r$dept),], .(reftype, ref_yr), summarise, n_cands = length(unique(candid)))
+
+# Plot number of unique referred candidates by year and by referral type
+ggplot(d, aes(reftype, n_cands)) +   
+  geom_bar(aes(fill = ref_yr), position = "dodge", stat="identity") + 
+  xlab('Referral Type') + ylab('Number of unique referred candidates') +
+  theme(text = element_text(size=14)) + scale_y_continuous(breaks=seq(0,50000,by=2000))+
+  ggtitle("All SWE Referrals") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+### Referral Definitions
+
+A referral is categorized into two groups:
+
+- Strong referral - of "referral" type, which is determined by FB's referral tool + the referrer explicitly vouches for the candidate's professional competency
+- Weak referral - any lead, solicit, or referral that is *not* a strong referral
+- Never referred - any candidate who was never referred through the referral tool, or anyone who was referred through the referral tool whose referrals are made more than 50 days after their app is created or more than 365 days before their app is created
+
+
+### Appendix
+
+Put all the stuff here that is not necessary for supporting the points above. Good place for documentation of paths not pursued without distraction.
+
