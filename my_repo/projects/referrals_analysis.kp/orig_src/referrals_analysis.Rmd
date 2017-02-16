@@ -45,7 +45,9 @@ r$vouch <- grepl(paste(match, collapse="|"), r$ques)
 
 # Unique candidates referred by year and by type (for referrals within the Software Engineering departments)
 d <- ddply(r[r$ref_yr %in% c(2015,2016,2017) & grepl('Software Engineering', r$dept),], .(reftype, ref_yr), summarise, n_cands = length(unique(candid)))
+```
 
+```{r}
 # Plot number of unique referred candidates by year and by referral type
 ggplot(d, aes(reftype, n_cands)) +   
   geom_bar(aes(fill = ref_yr), position = "dodge", stat="identity") + 
