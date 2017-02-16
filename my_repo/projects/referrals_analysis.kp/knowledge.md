@@ -8,7 +8,7 @@ tags:
 - recruiting
 - referrals
 created_at: 2017-02-15 00:00:00
-updated_at: 2017-02-15 22:00:05.481842
+updated_at: 2017-02-15 22:02:57.072769
 tldr: Investigating performance, application creation to offer extend times, and funnel
   success rates for SWE experienced referrals and non-referrals.
 thumbnail: images/unnamed-chunk-2-1.png
@@ -16,7 +16,6 @@ thumbnail: images/unnamed-chunk-2-1.png
 **Contents**
 
 [TOC]
-
 
 
 ### Goals

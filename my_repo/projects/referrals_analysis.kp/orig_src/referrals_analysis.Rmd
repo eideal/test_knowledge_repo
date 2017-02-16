@@ -17,7 +17,6 @@ tldr: Investigating performance, application creation to offer extend times, and
 [TOC]
 
 
-
 ### Goals
 
 Inform recruiting strategy for SWE experienced candidates. Clients are Lori, EQ, Miranda, Jay, Nadir.
