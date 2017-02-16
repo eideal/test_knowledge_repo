@@ -8,10 +8,10 @@ tags:
 - recruiting
 - referrals
 created_at: 2017-02-15 00:00:00
-updated_at: 2017-02-15 22:02:57.072769
+updated_at: 2017-02-16 11:54:05.302474
 tldr: Investigating performance, application creation to offer extend times, and funnel
   success rates for SWE experienced referrals and non-referrals.
-thumbnail: images/unnamed-chunk-2-1.png
+thumbnail: images/unnamed-chunk-3-1.png
 ---
 **Contents**
 
@@ -28,7 +28,20 @@ Inform recruiting strategy for SWE experienced candidates. Clients are Lori, EQ,
 
 This plot shows the number of unique lead candidates, referrals, and solicits in 2015, 2016, and YTD.
 
-![plot of chunk unnamed-chunk-2](images/unnamed-chunk-2-1.png)
+
+
+
+```r
+# Plot number of unique referred candidates by year and by referral type
+ggplot(d, aes(reftype, n_cands)) +   
+  geom_bar(aes(fill = ref_yr), position = "dodge", stat="identity") + 
+  xlab('Referral Type') + ylab('Number of unique referred candidates') +
+  theme(text = element_text(size=14)) + scale_y_continuous(breaks=seq(0,50000,by=2000))+
+  ggtitle("All SWE Referrals") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+![plot of chunk unnamed-chunk-3](images/unnamed-chunk-3-1.png)
 
 
 ### Referral Definitions
