@@ -6,8 +6,9 @@ tags:
 - plotly
 - personality
 created_at: 2017-03-07 00:00:00
-updated_at: 2017-03-07 09:31:55.207851
+updated_at: 2017-03-07 10:07:48.899492
 tldr: Boris presented on Rmd with plotly at our team meeting
+thumbnail: images/unnamed-chunk-4-1.png
 ---
 **Contents**
 
@@ -77,9 +78,7 @@ r = cor(bfi[,1:25], use="complete.obs")
 plot_ly(z = r, x=row.names(r), y=row.names(r), colorscale = "Hot", type = "heatmap")
 ```
 
-```
-## Error in loadNamespace(name): there is no package called 'webshot'
-```
+<img src="images/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
 
 Overall, it looks like the within scale correlations are pretty high and items in the same scale seems more correlated with each other than they do with other scales. Except for the Openness scale. Let's take a closer look by getting some scale performance  information through a reliability analysis.
 
@@ -234,8 +233,6 @@ plot_ly(for_graph, x = for_graph$variable, y = for_graph$value, color = as.facto
   layout(boxmode = "group")
 ```
 
-```
-## Error in loadNamespace(name): there is no package called 'webshot'
-```
+<img src="images/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" />
 
 Here we can see a little bit of a broader picture of some personality differences between males and females. After all this hard work, we are now ready to share our results with our colleagues. We can simply send them this Markdown file with the data, which includes the code and our notes, to get their input into this project.
