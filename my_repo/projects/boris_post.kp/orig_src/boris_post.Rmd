@@ -43,6 +43,7 @@ This shows us the variable list along with some descriptives. We can see the 25 
 
 ```{r, fig.width=1.7, fig.height=1.7, fig.align='center', cache = FALSE}
 library(plotly)
+library(webshot)
 r = cor(bfi[,1:25], use="complete.obs")
 plot_ly(z = r, x=row.names(r), y=row.names(r), colorscale = "Hot", type = "heatmap")
 ```

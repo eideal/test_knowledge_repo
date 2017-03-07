@@ -6,7 +6,7 @@ tags:
 - plotly
 - personality
 created_at: 2017-03-07 00:00:00
-updated_at: 2017-03-07 10:07:48.899492
+updated_at: 2017-03-07 10:12:37.081721
 tldr: Boris presented on Rmd with plotly at our team meeting
 thumbnail: images/unnamed-chunk-4-1.png
 ---
@@ -74,6 +74,7 @@ This shows us the variable list along with some descriptives. We can see the 25 
 
 ```r
 library(plotly)
+library(webshot)
 r = cor(bfi[,1:25], use="complete.obs")
 plot_ly(z = r, x=row.names(r), y=row.names(r), colorscale = "Hot", type = "heatmap")
 ```
